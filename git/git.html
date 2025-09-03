@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Blabla</title>
+    <link href="git.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <section>
+            <articl>
+                <h1>Git Commands Reference</h1>
+
+                <div class="table">
+                    <h2>STAGE & SNAPSHOT</h2>
+                    <p>Working with snapshots and the Git staging area</p>
+
+                    <div class="cell command">git status</div>
+                    <div class="cell description">Show modified files in working directory, staged for your next commit.
+                    </div>
+
+                    <div class="cell command">git add [file]</div>
+                    <div class="cell description">Add a file as it looks now to your next commit (stage).</div>
+
+                    <div class="cell command">git reset [file]</div>
+                    <div class="cell description">Unstage a file while retaining the changes in working directory.</div>
+
+                    <div class="cell command">git diff</div>
+                    <div class="cell description">Show differences of what is changed but not staged.</div>
+
+                    <div class="cell command">git diff --staged</div>
+                    <div class="cell description">Show differences of what is staged but not yet committed.</div>
+
+                    <div class="cell command">git commit -m "[descriptive message]"</div>
+                    <div class="cell description">Commit your staged content as a new commit snapshot.</div>
+                    <h2>SETUP</h2>
+                    <p>Configuring user information used across all local repositories</p>
+
+                    <div class="cell command">git config --global user.name "[firstname lastname]"</div>
+                    <div class="cell description">Set a name that is identifiable for credit when reviewing version
+                        history.</div>
+
+                    <div class="cell command">git config --global user.email "[valid-email]"</div>
+                    <div class="cell description">Set an email address that will be associated with each history marker.
+                    </div>
+
+                    <div class="cell command">git config --global color.ui auto</div>
+                    <div class="cell description">Enable automatic command line coloring for Git for easy reviewing.
+                    </div>
+                    <h2>SETUP & INIT</h2>
+                    <p>Configuring user information, initializing and cloning repositories</p>
+
+                    <div class="cell command">git init</div>
+                    <div class="cell description">Initialize an existing directory as a Git repository.</div>
+
+                    <div class="cell command">git clone [url]</div>
+                    <div class="cell description">Retrieve an entire repository from a hosted location via URL.</div>
+                    <h2>BRANCH & MERGE</h2>
+                    <p>Isolating work in branches, changing context, and integrating changes</p>
+                    <div class="cell command">git branch</div>
+                    <div class="cell description">List your branches. A * will appear next to the currently active
+                        branch.</div>
+
+                    <div class="cell command">git branch [branch-name]</div>
+                    <div class="cell description">Create a new branch at the current commit.</div>
+
+                    <div class="cell command">git checkout</div>
+                    <div class="cell description">Switch to another branch and check it out into your working directory.
+                    </div>
+
+                    <div class="cell command">git merge [branch]</div>
+                    <div class="cell description">Merge the specified branch’s history into the current one.</div>
+
+                    <div class="cell command">git log</div>
+                    <div class="cell description">Show all commits in the current branch’s history.</div>
+                    <h2>TEMPORARY COMMITS</h2>
+                    <p>Temporarily store modified, tracked files in order to change branches</p>
+                    <div class="cell command">git stash</div>
+                    <div class="cell description">Save modified and staged changes.</div>
+
+                    <div class="cell command">git stash list</div>
+                    <div class="cell description">List stack-order of stashed file changes.</div>
+
+                    <div class="cell command">git stash pop</div>
+                    <div class="cell description">Write working from top of stash stack.</div>
+
+                    <div class="cell command">git stash drop</div>
+                    <div class="cell description">Discard the changes from top of stash stack.</div>
+                    <h2>IGNORING PATTERNS</h2>
+                    <p>Preventing unintentional staging or commiting of files</p>
+                    <div class="cell command">git config --global core.excludesfile [file]</div>
+                    <div class="cell description">System wide ignore pattern for all local repositories.</div>
+                    <h2>REWRITE HISTORY</h2>
+                    <p>Rewriting branches, updating commits and clearing history</p>
+                    <div class="cell command">git rebase [branch]</div>
+                    <div class="cell description">Apply any commits of current branch ahead of specified one.</div>
+
+                    <div class="cell command">git reset --hard [commit]</div>
+                    <div class="cell description">Clear staging area, rewrite working tree from specified commit.</div>
+<h2>TRACKING PATH CHANGES</h2>
+<p>Versioning file removes and path changes</p>
+                    <div class="cell command">git rm [file]</div>
+                    <div class="cell description">Delete the file from project and stage the removal for commit.</div>
+
+                    <div class="cell command">git mv [existing-path] [new-path]</div>
+                    <div class="cell description">Change an existing file path and stage the move.</div>
+
+                    <div class="cell command">git log --stat -M</div>
+                    <div class="cell description">Show all commit logs with indication of any paths that moved.</div>
+<h2>SHARE & UPDATE</h2>
+<p>Retrieving updates from another repository and updating local repos</p>
+                    <div class="cell command">git remote add [alias] [url]</div>
+                    <div class="cell description">Add a Git URL as an alias.</div>
+
+                    <div class="cell command">git fetch [alias]</div>
+                    <div class="cell description">Fetch down all the branches from that Git remote.</div>
+
+                    <div class="cell command">git merge [alias]/[branch]</div>
+                    <div class="cell description">Merge a remote branch into your current branch to bring it up to date.
+                    </div>
+
+                    <div class="cell command">git push [alias] [branch]</div>
+                    <div class="cell description">Transmit local branch commits to the remote repository branch.</div>
+
+                    <div class="cell command">git pull</div>
+                    <div class="cell description">Fetch and merge any commits from the tracking remote branch.</div>
+<h2>INSPECT & COMPARE</h2>
+<p> Examining logs, diffs and object information</p>
+                    <div class="cell command">git log</div>
+                    <div class="cell description">Show the commit history for the currently active branch.</div>
+
+                    <div class="cell command">git log branchB..branchA</div>
+                    <div class="cell description">Show the commits on branchA that are not on branchB.</div>
+
+                    <div class="cell command">git log --follow [file]</div>
+                    <div class="cell description">Show the commits that changed file, even across renames.</div>
+
+                    <div class="cell command">git diff branchB...branchA</div>
+                    <div class="cell description">Show the diff of what is in branchA that is not in branchB.</div>
+
+                    <div class="cell command">git show [SHA]</div>
+                    <div class="cell description">Show any object in Git in human-readable format.</div>
+                </div>
+                </article>
+
+        </section>
+    </main>
+
+
+
+    <footer>
+
+    </footer>
+</body>
+
+</html>
